@@ -1,6 +1,6 @@
 # Gravwell Community Edition
 
-Gravwell's Community Edition is a free licensing program intended for personal use. Unlike regular Gravwell licenses, Community Edition licenses are restricted to 2GB of ingested data per day. In our experience, we've found this to be more than enough for any home network applications (unless you decide to capture all packets and then start streaming Netflix!)
+Gravwell's Community Edition is a free licensing program intended for personal use. Unlike regular Gravwell licenses which ALWAYS include unlimited data, Community Edition licenses are restricted to 2GB of ingested data per day. In our experience, we've found this to be more than enough for any home network applications (unless you decide to capture all packets and then start streaming Netflix!)
 
 Getting Gravwell Community Edition is straightforward. First, you'll install the software from either our Debian package repository or a distribution-agnostic self-extracting installer. Next, you'll sign up for a free license, which will be emailed to you. Finally, the newly-installed Gravwell instance will prompt you to upload the license file; once it's uploaded, you'll be ready to start using Gravwell!
 
