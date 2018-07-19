@@ -17,26 +17,19 @@ and the server will respond with the following to indicate whether login was suc
 ```
 {
     LoginStatus : bool,
-    Reason: string,
-    Admin:  bool,
-    CookieName: string,
-    Cookie: string,
-    CSRFName: string,
-    CSRFToken: string
+    JWT: `jwt_present_here`
 }
 ```
 
-The server will respond with the proper status code and a "reason" property which should be displayed to the user.
+If the login fails, the server will respond with the proper status code and a "reason" property which should be displayed to the user.
 
 ## Logout
 
 * PUT /api/logout - logs your current instance out
 * DELETE /api/logout - logs out ALL your users instances
 
-## CSRF protections are enforced on all POSTs
-The provided CSRFName and CSRFToken need to be present in the HMTL header of all POST requests.
-For example, if the CSRFName is "SinkholeSafetyFirst" and the CSRFToken is "slkdfjldskjflkdjs"
-A POST will be rejected if 'SinkholeSafetyFirst: slkdfjldskjflkdjs' isn't in the POST request header.
+## Bearer tokens
+The JWT returned upon successful login should be sent as a bearer token on the Authorization header.
 
 ## View active sessions
 GET the /api/account/{id}/sessions and it will return a chunk of JSON.  Admins can request any users sessions, users can ONLY request their own sessions.
