@@ -67,6 +67,8 @@ The SearchString member should contain the actual query which will invoke the se
 
 SearchStart and SearchEnd should be the time ranges that the query will operate over.  The time ranges should be formatted in the RFC3339Nano format which looks like "2006-01-02T15:04:05.999999999Z07:00"
 
+Metadata is an optional field for clients to provide some data that will stay with the search for it's lifetime. This is an arbitrary JSON blob specified by any given client. No guarantees are made on structure.
+
 An example search request with a good query would contain the following JSON:
 ```
 {
@@ -74,6 +76,7 @@ An example search request with a good query would contain the following JSON:
        SearchStart:  "2015-01-01T12:01:00.0Z07:00",
        SearchEnd:    "2015-01-01T12:01:30.0Z07:00",
        Background:   false,
+       Metadata:     {"foo":"bar"}
 }
 ```
 
@@ -87,9 +90,8 @@ The response to a good query would contain the following JSON:
         RenderModule: "text",
         RenderCmd:    "text",
         OutputSearchSubproto:  "searchSDF8973",
-        OutputStatsSubproto:   "statsSDF8973",
         SearchID:              "skdlfjs9098",
-		SearchStartRange:      "2015-01-01T12:01:00.0Z07:00",
+	SearchStartRange:      "2015-01-01T12:01:00.0Z07:00",
         SearchEndRange:        "2015-01-01T12:01:30.0Z07:00",
         Background:            false,
 }
